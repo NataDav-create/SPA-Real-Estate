@@ -14,7 +14,7 @@ _template
 app/bower/
 .tmp/
 /build/
-# /dist/
+/dist/
 
 # OS or Editor folders
 .DS_Store

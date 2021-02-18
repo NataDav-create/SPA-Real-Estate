@@ -454,10 +454,71 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("\n\n//# sourceURL=webpack:///./src/js/main.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pages_homePage__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./pages/homePage */ \"./src/js/pages/homePage.js\");\n/* harmony import */ var _pages_singleItemPage__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./pages/singleItemPage */ \"./src/js/pages/singleItemPage.js\");\n/* harmony import */ var _pages_favouritesPage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./pages/favouritesPage */ \"./src/js/pages/favouritesPage.js\");\n/* harmony import */ var _pages_bidsPage__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./pages/bidsPage */ \"./src/js/pages/bidsPage.js\");\n/* harmony import */ var _pages_errorPage__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./pages/errorPage */ \"./src/js/pages/errorPage.js\");\n\n\n\n\n\nvar routes = [{\n  path: '/',\n  component: _pages_homePage__WEBPACK_IMPORTED_MODULE_0__[\"default\"]\n}, {\n  path: 'item',\n  component: _pages_singleItemPage__WEBPACK_IMPORTED_MODULE_1__[\"default\"]\n}, {\n  path: 'favourites',\n  component: _pages_favouritesPage__WEBPACK_IMPORTED_MODULE_2__[\"default\"]\n}, {\n  path: 'bids',\n  component: _pages_bidsPage__WEBPACK_IMPORTED_MODULE_3__[\"default\"]\n}];\n\nfunction findComponentByPath(path, routes) {\n  return routes.find(function (route) {\n    return route.path === path;\n  });\n}\n\nfunction router() {\n  var pathArray = location.hash.split('/');\n  var currentPath = pathArray[0] === '' ? '/' : pathArray[1];\n  currentPath = currentPath === '' ? '/' : currentPath;\n\n  var _ref = findComponentByPath(currentPath, routes) || {},\n      _ref$component = _ref.component,\n      component = _ref$component === void 0 ? _pages_errorPage__WEBPACK_IMPORTED_MODULE_4__[\"default\"] : _ref$component;\n\n  component();\n}\n\nwindow.addEventListener('hashchange', router);\nwindow.addEventListener('load', router);\n\n//# sourceURL=webpack:///./src/js/main.js?");
+
+/***/ }),
+
+/***/ "./src/js/pages/bidsPage.js":
+/*!**********************************!*\
+  !*** ./src/js/pages/bidsPage.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var markup = \"<div class=\\\"container\\\"><h1>bids page</h1></div>\";\n  document.querySelector('#app').innerHTML = markup;\n});\n\n//# sourceURL=webpack:///./src/js/pages/bidsPage.js?");
+
+/***/ }),
+
+/***/ "./src/js/pages/errorPage.js":
+/*!***********************************!*\
+  !*** ./src/js/pages/errorPage.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var markup = \"<div class=\\\"container\\\"><h1>error page</h1></div>\";\n  document.querySelector('#app').innerHTML = markup;\n});\n\n//# sourceURL=webpack:///./src/js/pages/errorPage.js?");
+
+/***/ }),
+
+/***/ "./src/js/pages/favouritesPage.js":
+/*!****************************************!*\
+  !*** ./src/js/pages/favouritesPage.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var markup = \"<div class=\\\"container\\\"><h1>favs page</h1></div>\";\n  document.querySelector('#app').innerHTML = markup;\n});\n\n//# sourceURL=webpack:///./src/js/pages/favouritesPage.js?");
+
+/***/ }),
+
+/***/ "./src/js/pages/homePage.js":
+/*!**********************************!*\
+  !*** ./src/js/pages/homePage.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var markup = \"<div class=\\\"container\\\"><h1>home page</h1></div>\";\n  document.querySelector('#app').innerHTML = markup;\n});\n\n//# sourceURL=webpack:///./src/js/pages/homePage.js?");
+
+/***/ }),
+
+/***/ "./src/js/pages/singleItemPage.js":
+/*!****************************************!*\
+  !*** ./src/js/pages/singleItemPage.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var markup = \"<div class=\\\"container\\\"><h1>singleItem page</h1></div>\";\n  document.querySelector('#app').innerHTML = markup;\n});\n\n//# sourceURL=webpack:///./src/js/pages/singleItemPage.js?");
 
 /***/ }),
 
