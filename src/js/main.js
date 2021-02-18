@@ -4,6 +4,12 @@ import favouritesPage from './pages/favouritesPage';
 import bidsPage from './pages/bidsPage';
 import errorPage from './pages/errorPage';
 
+const state = {
+
+};
+//test
+window.state = state;
+
 const routes = [{
     path: '/',
     component: homePage
@@ -37,7 +43,7 @@ function router() {
     component = errorPage
   } = findComponentByPath(currentPath, routes) || {};
 
-  component();
+  component(state);
 }
 
 window.addEventListener('hashchange', router);

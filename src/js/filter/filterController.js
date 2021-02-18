@@ -1,9 +1,9 @@
 import Filter from './filterModel';
 import * as view from './filterView';
 
-export default function () {
-  view.render();
+export default function (state) {
+  // view.render();
 
-  const filter = new Filter;
-  filter.getParams();
+  if (!state.filter) state.filter = new Filter();
+  state.filter.getParams();
 }
