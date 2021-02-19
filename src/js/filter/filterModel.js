@@ -8,7 +8,6 @@ export default class Filter {
       const response = await fetch(queryString);
       const data = await response.json();
       this.params = await data;
-      console.log(this.params);
     } catch (error) {
       console.log(error)
     }

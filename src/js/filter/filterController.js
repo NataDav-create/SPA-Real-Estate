@@ -1,9 +1,10 @@
 import Filter from './filterModel';
 import * as view from './filterView';
 
-export default function (state) {
-  // view.render();
+export default async function (state) {
 
   if (!state.filter) state.filter = new Filter();
-  state.filter.getParams();
+  await state.filter.getParams();
+
+  view.render(state.filter.params);
 }
