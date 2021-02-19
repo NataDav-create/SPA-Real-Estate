@@ -1,3 +1,11 @@
+import 'url-search-params-polyfill';
+
+const elements = {
+  filterSelect: document.getElementsByClassName('filter__dropdown'),
+  filterRooms: document.getElementsByClassName('rooms__checkbox'),
+  filterFields: document.getElementsByClassName('range__input'),
+}
+
 export function render(params) {
 
   let complexNames = '';
@@ -19,7 +27,7 @@ export function render(params) {
     `;
   });
   const markup = `
-    <form method="GET" class="container p-0">
+    <form id="filter-form" method="GET" class="container p-0">
                 <div class="heading-1">Выбор квартир:</div>
                 <div class="filter">
                     <div class="filter__col">
@@ -105,4 +113,38 @@ export function render(params) {
 
 export function changeButtonText(number) {
   document.getElementsByClassName('filter__show')[0].innerText = `Показать ${number} объектoв`
+}
+
+export function getInput() {
+  const searchParams = new URLSearchParams();
+
+  if (elements.filterSelect[0].value != 'all') {
+    searchParams.append(elements.filterSelect[0].name, elements.filterSelect[0].value)
+  }
+
+  const roomsValues = [];
+  Array.from(elements.filterRooms).forEach((checkbox) => {
+    if (checkbox.value !== '' && checkbox.checked) {
+      roomsValues.push(checkbox.value);
+    }
+  })
+
+  const roomsValuesString = roomsValues.join(',');
+  if (roomsValuesString !== '') {
+    searchParams.append('rooms', roomsValuesString);
+  }
+
+  Array.from(elements.filterFields).forEach((input) => {
+    if (input.value !== '') {
+      searchParams.append(input.name, input.value);
+    }
+  });
+
+  const queryString = searchParams.toString();
+  if (queryString) {
+    return '?' + queryString;
+  } else {
+    return '';
+  }
+  console.log(queryString)
 }

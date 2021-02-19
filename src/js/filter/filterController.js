@@ -11,4 +11,11 @@ export default async function (state) {
   await state.filter.getResults();
 
   view.changeButtonText(state.filter.result.length);
+
+  const form = document.querySelector('#filter-form');
+  form.addEventListener('change', function (e) {
+    e.preventDefault();
+    state.filter.query = view.getInput();
+    console.log(state.filter.query)
+  });
 }
