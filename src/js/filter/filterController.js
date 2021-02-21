@@ -18,6 +18,7 @@ export default async function (state) {
     e.preventDefault();
     state.filter.query = view.getInput();
     await state.filter.getResults();
+    state.results = state.filter.result;
     view.changeButtonText(state.filter.result.length);
   });
 
@@ -29,6 +30,6 @@ export default async function (state) {
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
-    console.log('submit');
-  })
+    state.emitter.emit('event:render-listing', {});
+  });
 }

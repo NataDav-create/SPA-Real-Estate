@@ -3,9 +3,11 @@ import singleItem from './pages/singleItemPage';
 import favouritesPage from './pages/favouritesPage';
 import bidsPage from './pages/bidsPage';
 import errorPage from './pages/errorPage';
+import EventEmitter from './utils/EventEmitter';
 
 const state = {
-
+  redults: [],
+  emitter: new EventEmitter(),
 };
 //test
 window.state = state;

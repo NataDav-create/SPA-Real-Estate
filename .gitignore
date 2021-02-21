@@ -15,6 +15,7 @@ app/bower/
 .tmp/
 /build/
 /dist/
+.vscode/
 
 # OS or Editor folders
 .DS_Store
