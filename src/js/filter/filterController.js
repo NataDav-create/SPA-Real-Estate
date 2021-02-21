@@ -9,6 +9,7 @@ export default async function (state) {
   view.render(state.filter.params);
 
   await state.filter.getResults();
+  state.results = state.filter.result;
 
   view.changeButtonText(state.filter.result.length);
 
