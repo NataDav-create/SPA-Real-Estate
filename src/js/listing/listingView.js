@@ -1,5 +1,5 @@
 export function render() {
-  const markup = `
+    const markup = `
   <div class="cards-wrapper">
     <div class="container p-0 pt-5">
       <div id="listingContainer" class="row">
@@ -7,15 +7,16 @@ export function render() {
     </div>
   </div>
   `;
-  document.querySelector('#app').insertAdjacentHTML('beforeend', markup);
+    document.querySelector('#app').insertAdjacentHTML('beforeend', markup);
 }
 
 export function renderCard(object) {
-  const listingContainer = document.querySelector('#listingContainer');
-  const markup = `
+    const listingContainer = document.querySelector('#listingContainer');
+    const markup = `
                     <article class="col-md-4">
                             <!-- card -->
-                            <a href="object.html" class="card">
+                            <a href="#/item/${object.id}"
+                            class = "card" >
                                 <div class="card__header">
                                     <div class="card__title">
                                         ЖК ${object.complex_name}
@@ -62,10 +63,10 @@ export function renderCard(object) {
                             <!-- // card -->
                         </article>
   `;
-  listingContainer.insertAdjacentHTML('beforeend', markup);
+    listingContainer.insertAdjacentHTML('beforeend', markup);
 }
 
 export function clearListingContainer() {
-  const listingContainer = document.querySelector('#listingContainer');
-  listingContainer.innerHTML = '';
+    const listingContainer = document.querySelector('#listingContainer');
+    listingContainer.innerHTML = '';
 }
