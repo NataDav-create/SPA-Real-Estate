@@ -461,6 +461,42 @@ eval("var logLevel = \"info\";\n\nfunction dummy() {}\n\nfunction shouldLog(leve
 
 /***/ }),
 
+/***/ "./src/js/bids/bidsControlller.js":
+/*!****************************************!*\
+  !*** ./src/js/bids/bidsControlller.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bidsView__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./bidsView */ \"./src/js/bids/bidsView.js\");\n/* harmony import */ var _bidsModel__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./bidsModel */ \"./src/js/bids/bidsModel.js\");\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\n\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (_x) {\n  return _ref.apply(this, arguments);\n});\n\nfunction _ref() {\n  _ref = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee(state) {\n    return regeneratorRuntime.wrap(function _callee$(_context) {\n      while (1) {\n        switch (_context.prev = _context.next) {\n          case 0:\n            if (!state.bids) state.bids = new _bidsModel__WEBPACK_IMPORTED_MODULE_1__[\"default\"]();\n            _context.next = 3;\n            return state.bids.getBids();\n\n          case 3:\n            _bidsView__WEBPACK_IMPORTED_MODULE_0__[\"renderBids\"](state.bids.bids);\n\n          case 4:\n          case \"end\":\n            return _context.stop();\n        }\n      }\n    }, _callee);\n  }));\n  return _ref.apply(this, arguments);\n}\n\n//# sourceURL=webpack:///./src/js/bids/bidsControlller.js?");
+
+/***/ }),
+
+/***/ "./src/js/bids/bidsModel.js":
+/*!**********************************!*\
+  !*** ./src/js/bids/bidsModel.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Bids; });\nfunction asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }\n\nfunction _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"next\", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, \"throw\", err); } _next(undefined); }); }; }\n\nfunction _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError(\"Cannot call a class as a function\"); } }\n\nfunction _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if (\"value\" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }\n\nfunction _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }\n\nvar Bids = /*#__PURE__*/function () {\n  function Bids() {\n    _classCallCheck(this, Bids);\n  }\n\n  _createClass(Bids, [{\n    key: \"getBids\",\n    value: function () {\n      var _getBids = _asyncToGenerator( /*#__PURE__*/regeneratorRuntime.mark(function _callee() {\n        var queryString, result, data;\n        return regeneratorRuntime.wrap(function _callee$(_context) {\n          while (1) {\n            switch (_context.prev = _context.next) {\n              case 0:\n                _context.prev = 0;\n                queryString = \"http://jsproject.webcademy.ru/bids\";\n                _context.next = 4;\n                return fetch(queryString);\n\n              case 4:\n                result = _context.sent;\n                _context.next = 7;\n                return result.json();\n\n              case 7:\n                data = _context.sent;\n                _context.next = 10;\n                return data;\n\n              case 10:\n                this.bids = _context.sent;\n                _context.next = 16;\n                break;\n\n              case 13:\n                _context.prev = 13;\n                _context.t0 = _context[\"catch\"](0);\n                console.log(_context.t0);\n\n              case 16:\n              case \"end\":\n                return _context.stop();\n            }\n          }\n        }, _callee, this, [[0, 13]]);\n      }));\n\n      function getBids() {\n        return _getBids.apply(this, arguments);\n      }\n\n      return getBids;\n    }()\n  }]);\n\n  return Bids;\n}();\n\n\n\n//# sourceURL=webpack:///./src/js/bids/bidsModel.js?");
+
+/***/ }),
+
+/***/ "./src/js/bids/bidsView.js":
+/*!*********************************!*\
+  !*** ./src/js/bids/bidsView.js ***!
+  \*********************************/
+/*! exports provided: renderBids */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"renderBids\", function() { return renderBids; });\nfunction renderContainer() {\n  var markup = \"\\n            <div class=\\\"container p-0 mb-5\\\">\\n                <div class=\\\"heading-1\\\">\\u0417\\u0430\\u044F\\u0432\\u043A\\u0438</div>\\n            </div>\\n\\n            <!-- panels-wrapper -->\\n            <div class=\\\"panels-wrapper\\\">\\n                <div id=\\\"bidsHolder\\\" class=\\\"container p-0\\\">\\n                </div>\\n            </div>  \\n  \";\n  document.querySelector('#app').insertAdjacentHTML('afterbegin', markup);\n}\n\nfunction renderBid(bid) {\n  var markup = \"\\n                    <div class=\\\"panel panel--no-hover\\\">\\n                        <div class=\\\"panel__bidid\\\">\".concat(bid.id, \"</div>\\n                        <div class=\\\"panel__bidname\\\">\").concat(bid.name, \"</div>\\n                        <div class=\\\"panel__bidphone\\\">\").concat(bid.phone, \"</div>\\n                    </div>\\n  \");\n  document.querySelector('#bidsHolder').insertAdjacentHTML('beforeend', markup);\n}\n\n;\nfunction renderBids(bids) {\n  renderContainer();\n  bids.forEach(function (item) {\n    renderBid(item);\n  });\n}\n\n//# sourceURL=webpack:///./src/js/bids/bidsView.js?");
+
+/***/ }),
+
 /***/ "./src/js/filter/filterController.js":
 /*!*******************************************!*\
   !*** ./src/js/filter/filterController.js ***!
@@ -541,7 +577,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _pag
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = (function () {\n  var markup = \"<div class=\\\"container\\\"><h1>bids page</h1></div>\";\n  document.querySelector('#app').innerHTML = markup;\n});\n\n//# sourceURL=webpack:///./src/js/pages/bidsPage.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _bids_bidsControlller__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./../bids/bidsControlller */ \"./src/js/bids/bidsControlller.js\");\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (function (state) {\n  document.querySelector('#app').innerHTML = '';\n  Object(_bids_bidsControlller__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(state);\n});\n\n//# sourceURL=webpack:///./src/js/pages/bidsPage.js?");
 
 /***/ }),
 
