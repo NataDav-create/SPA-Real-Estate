@@ -26,7 +26,9 @@ export default async function (state) {
   form.addEventListener('reset', async function () {
     state.filter.query = '';
     await state.filter.getResults();
+    state.results = state.filter.result;
     view.changeButtonText(state.filter.result.length);
+    state.emitter.emit('event:render-listing', {})
   })
 
   form.addEventListener('submit', function (e) {
