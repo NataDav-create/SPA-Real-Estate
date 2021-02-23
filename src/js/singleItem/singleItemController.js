@@ -28,7 +28,6 @@ export default async function (state) {
 
     const response = state.singleItem.response;
     if (response.message === 'Bid Created') {
-      console.log('bid is created');
       view.hideModal();
       view.clearInput();
     } else if (response.message === 'Bid Not Created') {

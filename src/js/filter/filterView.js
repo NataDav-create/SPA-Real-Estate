@@ -156,5 +156,4 @@ export function getInput() {
   } else {
     return '';
   }
-  console.log(queryString)
 }
