@@ -2,10 +2,10 @@ import SingleItem from './singleItemModel';
 import * as view from './singleItemView';
 
 export default async function (state) {
-  console.log('single item control start');
   state.singleItem = new SingleItem(state.routeParams);
   await state.singleItem.getItem();
-  view.render(state.singleItem.result);
+
+  view.render(state.singleItem.result, state.favourites.isFav(state.singleItem.id));
 
   document.querySelector('.button-order').addEventListener('click', () => {
     view.showModal();
@@ -36,5 +36,11 @@ export default async function (state) {
         console.log(item);
       })
     }
+  });
+
+  document.querySelector('#addToFavouriteBtn').addEventListener('click', () => {
+    state.favourites.toggleFav(state.singleItem.id);
+
+    view.toggleFavouriteButton(state.favourites.isFav(state.singleItem.id));
   });
 }

@@ -4,10 +4,12 @@ import favouritesPage from './pages/favouritesPage';
 import bidsPage from './pages/bidsPage';
 import errorPage from './pages/errorPage';
 import EventEmitter from './utils/EventEmitter';
+import Favourites from './favourites/favouritesModel';
 
 const state = {
   redults: [],
   emitter: new EventEmitter(),
+  favourites: new Favourites(),
 };
 //test
 window.state = state;

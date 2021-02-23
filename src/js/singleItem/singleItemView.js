@@ -1,7 +1,7 @@
-export function render(object) {
-  const appContainer = document.querySelector('#app');
+export function render(object, isFaved) {
+    const appContainer = document.querySelector('#app');
 
-  const markup = `
+    const markup = `
   <div class="container p-0 pt-5">
                 <div class="heading-1">
                     ${object.title},  ${object.square} м2 за  ${object.price_total} ₽
@@ -30,14 +30,16 @@ export function render(object) {
                             <div class="object__desc-art">${object.scu}</div>
 
                             <!-- Добавить в избранное -->
-                            <button class="button-favourite">
-                                <i class="fas fa-heart"></i> <span>В избранное</span>
+                            <button id="addToFavouriteBtn" class="
+                            button-favourite
+                            ${isFaved ? 'button-favourite--active' : ''}
+                            ">
+                                <i class="fas fa-heart"></i> <span>
+                                ${isFaved ? 'В избранноm' : 'В избранное'}
+                                </span>
                             </button>
 
-                            <!-- В Избранном -->
-                            <button class="button-favourite button-favourite--active">
-                                <i class="fas fa-heart"></i> <span>В избранном</span>
-                            </button>
+                       
 
                         </div>
 
@@ -98,7 +100,7 @@ export function render(object) {
             </div>
   `;
 
-  const markupModal = `
+    const markupModal = `
      <div class="modal-wrapper none">
             <div class="modal">
                 <div class="modal__header">
@@ -169,26 +171,37 @@ export function render(object) {
         </div>
   `;
 
-  appContainer.insertAdjacentHTML('beforeend', markup);
-  appContainer.insertAdjacentHTML('beforeend', markupModal);
+    appContainer.insertAdjacentHTML('beforeend', markup);
+    appContainer.insertAdjacentHTML('beforeend', markupModal);
 }
 
 export function showModal() {
-  document.querySelector('.modal-wrapper').classList.remove('none');
+    document.querySelector('.modal-wrapper').classList.remove('none');
 }
 
 export function hideModal() {
-  document.querySelector('.modal-wrapper').classList.add('none');
+    document.querySelector('.modal-wrapper').classList.add('none');
 }
 
 export function getInput() {
-  const formData = {};
-  formData.name = document.querySelector('#form-name').value;
-  formData.phone = document.querySelector('#form-phone').value;
-  return formData;
+    const formData = {};
+    formData.name = document.querySelector('#form-name').value;
+    formData.phone = document.querySelector('#form-phone').value;
+    return formData;
 }
 
 export function clearInput() {
-  document.querySelector('#form-name').value = '';
-  document.querySelector('#form-phone').value = '';
+    document.querySelector('#form-name').value = '';
+    document.querySelector('#form-phone').value = '';
+}
+
+export function toggleFavouriteButton(isFaved) {
+    const btn = document.querySelector('#addToFavouriteBtn');
+    if (isFaved) {
+        btn.classList.add('button-favourite--active');
+        btn.querySelector('span').textContent = ' В избранноm'
+    } else {
+        btn.classList.remove('button-favourite--active');
+        btn.querySelector('span').textContent = ' В избранноe'
+    }
 }

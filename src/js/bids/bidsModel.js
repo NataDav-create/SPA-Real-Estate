@@ -1,7 +1,4 @@
 export default class Bids {
-  constructor() {
-
-  }
   async getBids() {
     try {
       const queryString = `http://jsproject.webcademy.ru/bids`;
